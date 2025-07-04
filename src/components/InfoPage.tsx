@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { Search, Heart, Chat, Home } from "lucide-react";
+import { Search, Heart, MessageCircle, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -117,7 +116,7 @@ const InfoPage = () => {
                     <span className="text-sm">{article.likes}</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <Chat size={16} className="text-gray-500" />
+                    <MessageCircle size={16} className="text-gray-500" />
                     <span className="text-sm">{article.comments}</span>
                   </div>
                 </div>

@@ -1,5 +1,5 @@
 
-import { Home, Chat, Info, Wallet, Settings } from "lucide-react";
+import { Home, MessageCircle, Info, Wallet, Settings } from "lucide-react";
 import { TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface BottomNavigationProps {
@@ -10,7 +10,7 @@ interface BottomNavigationProps {
 const BottomNavigation = ({ activeTab, onTabChange }: BottomNavigationProps) => {
   const navItems = [
     { id: "home", icon: Home, label: "主頁" },
-    { id: "chat", icon: Chat, label: "聊天" },
+    { id: "chat", icon: MessageCircle, label: "聊天" },
     { id: "info", icon: Info, label: "資訊" },
     { id: "wallet", icon: Wallet, label: "錢包" },
     { id: "settings", icon: Settings, label: "設定" },

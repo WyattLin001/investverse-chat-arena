@@ -7,7 +7,7 @@ import InfoPage from "@/components/InfoPage";
 import WalletPage from "@/components/WalletPage";
 import SettingsPage from "@/components/SettingsPage";
 import BottomNavigation from "@/components/BottomNavigation";
-import { Home, Chat, Wallet, Settings, Info } from "lucide-react";
+import { Home, MessageCircle, Wallet, Settings, Info } from "lucide-react";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState("home");
