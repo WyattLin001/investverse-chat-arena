@@ -1,73 +1,62 @@
-# Welcome to your Lovable project
+# InvestVerse SwiftUI App
 
-## Project info
+A SwiftUI implementation of the InvestVerse investment competition app with LINE-inspired design.
 
-**URL**: https://lovable.dev/projects/f91fe8ca-67cf-4ae2-a896-79bafbb76674
+## Features
 
-## How can I edit this code?
+- **Home Page**: Displays NTD balance, weekly rankings, and investment groups
+- **LINE-inspired Design**: Card-based layout with clean, modern aesthetics
+- **Animated Rankings**: 0.5s number scroll animation for return percentages
+- **Supabase Integration**: Real-time data storage and retrieval
+- **Tab Navigation**: 5-tab bottom navigation with SF Symbols
 
-There are several ways of editing your application.
+## Setup
 
-**Use Lovable**
+1. **Install Dependencies**:
+   ```bash
+   # Add Supabase Swift package to your Xcode project
+   # File > Add Package Dependencies
+   # https://github.com/supabase/supabase-swift.git
+   ```
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f91fe8ca-67cf-4ae2-a896-79bafbb76674) and start prompting.
+2. **Configure Supabase**:
+   - Update `SupabaseManager.swift` with your Supabase URL and anon key
+   - Run the SQL schema in your Supabase dashboard
 
-Changes made via Lovable will be committed automatically to this repo.
+3. **Build and Run**:
+   - Open the project in Xcode
+   - Select iPhone 14 Pro simulator
+   - Build and run the app
 
-**Use your preferred IDE**
+## Architecture
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **MVVM Pattern**: Clean separation of concerns
+- **ObservableObject**: Reactive data binding
+- **Supabase**: Backend as a service for data storage
+- **SwiftUI**: Declarative UI framework
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Key Components
 
-Follow these steps:
+- `HomeView`: Main home page with rankings and groups
+- `TopNavigationBar`: 44px navigation bar with balance and actions
+- `WeeklyRankingView`: Animated rankings display
+- `GroupCardView`: Investment group cards with join functionality
+- `SupabaseManager`: Database operations and API calls
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Database Schema
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+The app uses three main tables:
+- `investment_groups`: Store group information
+- `weekly_rankings`: Track weekly performance
+- `group_members`: Manage group memberships
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Design Specifications
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+- **Colors**: LINE green (#00B900), gold (#FFD700), silver (#C0C0C0), bronze (#CD7F32)
+- **Typography**: SF Pro with various weights and sizes
+- **Layout**: Responsive design optimized for iPhone 14 Pro
+- **Animations**: Smooth 0.5s easing animations for number updates
 
-**Edit a file directly in GitHub**
+## Navigation
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/f91fe8ca-67cf-4ae2-a896-79bafbb76674) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Tapping "Join Group" navigates to the Wallet tab, maintaining the app's flow and user experience.
